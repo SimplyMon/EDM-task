@@ -43,7 +43,8 @@ laravel -v
 
 ## Project Setup – Part 1
 
-Follow these steps to set up and run the project locally:
+Follow these steps to set up and run the project PART 1 locally:
+My answers in Part 1 will be found in web.php in part 1.
 
 1. **Clone the repository**
 
@@ -59,13 +60,13 @@ npm install
 composer install
 ```
 
-2. **Run migrations (make sure xampp Apache & MYSQL is running)**
+3. **Run migrations (make sure xampp Apache & MYSQL is running)**
 
 ```bash
 php artisan migrate
 ```
 
-3. **Running the Application**
+4. **Running the Application**
 
 ```bash
 php artisan serve:dev
@@ -79,3 +80,48 @@ Wait Until the App is Running Refresh if needed.:
 ---
 
 ## Project Setup – Part 2
+
+Follow these steps to set up and run the project PART 2 locally:
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/SimplyMon/EDM-task.git
+cd EDM-task/part-2
+```
+
+2. **Install PHP & Node dependencies**
+
+```bash
+npm install
+composer install
+```
+
+3. **Rollback Migrations**
+
+   You might need to rollback the old migrations from part 1:
+
+```bash
+php artisan migrate:rollback
+```
+
+4. **Run migrations (make sure xampp Apache & MYSQL is running)**
+
+```bash
+php artisan migrate
+```
+
+5. **Running the Application**
+
+```bash
+php artisan serve:dev
+```
+
+**Go to**
+**http://127.0.0.1:8000/ OR http://localhost:8000**
+
+Wait Until the App is Running Refresh if needed.:
+
+---
+
+_Created by Simon Pasag_
