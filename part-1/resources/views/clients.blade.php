@@ -3,9 +3,17 @@
 @section('content')
     <div class="flex items-center justify-center min-h-screen px-4 bg-gray-900 text-gray-100">
         <div class="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-lg border border-gray-700">
-            <h1 class="text-3xl font-extrabold mb-6 text-white text-center">
-                Add Client
-            </h1>
+            <div class="flex items-center justify-between mb-6">
+                <button type="button" onclick="window.history.back()"
+                    class="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-md transition">
+                    Go Back
+                </button>
+                <h1 class="text-3xl font-extrabold text-white">
+                    Add Client
+                </h1>
+
+            </div>
+
 
             <form id="clientForm" class="space-y-5">
                 @csrf
