@@ -14,10 +14,30 @@ It demonstrates my knowledge of Laravel structure, Eloquent ORM, routing, valida
 Before running this project, ensure your machine has the following installed:
 
 - **PHP 8+**
-- **PHPMySQL**
+
+```bash
+php -v
+```
+
 - **Composer**
+
+```bash
+composer -v
+```
+
 - **Node.js & npm**
+
+```bash
+node -v
+npm -v
+```
+
+- **PHPMySQL**
 - **Laravel** (via Composer global install)
+
+```bash
+laravel -v
+```
 
 ---
 
@@ -29,7 +49,7 @@ Follow these steps to set up and run the project locally:
 
 ```bash
 git clone https://github.com/SimplyMon/EDM-task.git
-cd EDM-task/part1
+cd EDM-task/part-1
 ```
 
 2. **Install PHP & Node dependencies**
