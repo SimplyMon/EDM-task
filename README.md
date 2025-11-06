@@ -14,7 +14,7 @@ It demonstrates my knowledge of Laravel structure, Eloquent ORM, routing, valida
 Before running this project, ensure your machine has the following installed:
 
 - **PHP 8+**
-- **PHPMySql**
+- **PHPMySQL**
 - **Composer**
 - **Node.js & npm**
 - **Laravel** (via Composer global install)
@@ -39,7 +39,7 @@ npm install
 composer install
 ```
 
-2. **Run migrations(make sure xampp phpadmin is running)**
+2. **Run migrations (make sure xampp Apache & MYSQL is running)**
 
 ```bash
 php artisan migrate
@@ -51,6 +51,8 @@ php artisan migrate
 php artisan serve:dev
 ```
 
+Wait Until the App is Running Refresh if needed.:
+
 ---
 
-## Project Setup – Part 1
+## Project Setup – Part 2
