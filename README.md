@@ -71,6 +71,9 @@ php artisan migrate
 php artisan serve:dev
 ```
 
+**Go to**
+**http://127.0.0.1:8000/ OR http://localhost:8000**
+
 Wait Until the App is Running Refresh if needed.:
 
 ---
