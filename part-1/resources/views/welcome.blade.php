@@ -4,7 +4,7 @@
     <section class="min-h-screen flex flex-col justify-center items-center bg-gray-900 text-gray-100 text-center px-6">
         <div class="bg-gray-800 shadow-xl rounded-lg p-10 max-w-xl w-full">
             <h1 class="text-4xl font-extrabold text-white mb-4">
-                Junior Web Developer Technical Exam
+                Junior Web Developer Technical Exam | PART 1
             </h1>
 
             <p class="text-gray-400 mb-8">

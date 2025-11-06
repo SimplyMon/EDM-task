@@ -22,8 +22,6 @@
                 </a>
             </div>
 
-
-
             @if (session('success'))
                 <div class="bg-green-600 text-white px-4 py-2 rounded-lg mb-4 shadow-sm">
                     {{ session('success') }}
@@ -71,15 +69,11 @@
                                         class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-lg shadow-sm transition text-sm font-medium">
                                         Edit
                                     </a>
-                                    <form action="{{ route('clients.destroy', $client->id) }}" method="POST"
-                                        onsubmit="return confirm('Are you sure?')">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit"
-                                            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg shadow-sm transition text-sm font-medium">
-                                            Delete
-                                        </button>
-                                    </form>
+                                    <button type="button"
+                                        onclick="openDeleteModal({{ $client->id }}, '{{ $client->name }}')"
+                                        class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg shadow-sm transition text-sm font-medium">
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         @empty
@@ -93,5 +87,56 @@
                 </table>
             </div>
         </div>
+
+        <div id="deleteModal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <div
+                class="bg-gray-800 p-6 rounded-xl shadow-2xl w-full max-w-md border border-gray-700 transform scale-95 transition-transform duration-300">
+                <h3 class="text-xl font-bold text-white mb-4">Confirm Deletion</h3>
+                <p class="text-gray-300 mb-6" id="deleteModalText">Are you sure you want to delete this client?</p>
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeDeleteModal()"
+                        class="px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-500 text-white font-semibold transition">
+                        Cancel
+                    </button>
+                    <form id="deleteForm" method="POST" class="inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-semibold transition">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        const modal = document.getElementById('deleteModal');
+        const modalCard = modal.querySelector('div');
+
+        function openDeleteModal(clientId, clientName) {
+            const form = document.getElementById('deleteForm');
+            const text = document.getElementById('deleteModalText');
+
+            form.action = `/clients/${clientId}`;
+            text.textContent = `Are you sure you want to delete "${clientName}"?`;
+
+            modal.classList.remove('pointer-events-none');
+            modal.classList.remove('opacity-0');
+            modal.classList.add('opacity-100');
+            modalCard.classList.remove('scale-95');
+            modalCard.classList.add('scale-100');
+        }
+
+        function closeDeleteModal() {
+            modal.classList.add('opacity-0');
+            modal.classList.remove('opacity-100');
+            modalCard.classList.add('scale-95');
+            modalCard.classList.remove('scale-100');
+            setTimeout(() => modal.classList.add('pointer-events-none'), 300);
+        }
+    </script>
 @endsection
